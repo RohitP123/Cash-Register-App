@@ -11,6 +11,11 @@
 		AD34A50F27D9296000A6C1F1 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD34A50E27D9296000A6C1F1 /* ContentView.swift */; };
 		AD34A51127D9296500A6C1F1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AD34A51027D9296500A6C1F1 /* Assets.xcassets */; };
 		AD34A51427D9296500A6C1F1 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AD34A51327D9296500A6C1F1 /* Preview Assets.xcassets */; };
+		BBC2DBD527D92AF400403BEC /* SliderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBC2DBD427D92AF400403BEC /* SliderView.swift */; };
+		BBC2DBD927D92B0300403BEC /* SaveView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBC2DBD827D92B0300403BEC /* SaveView.swift */; };
+		BBC2DBDB27D92B0E00403BEC /* CircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBC2DBDA27D92B0E00403BEC /* CircleView.swift */; };
+		BBC2DBDD27D92B3400403BEC /* TotalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBC2DBDC27D92B3400403BEC /* TotalView.swift */; };
+		BBC2DBDF27D92B5000403BEC /* BillView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBC2DBDE27D92B5000403BEC /* BillView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +24,11 @@
 		AD34A50E27D9296000A6C1F1 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		AD34A51027D9296500A6C1F1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AD34A51327D9296500A6C1F1 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		BBC2DBD427D92AF400403BEC /* SliderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SliderView.swift; sourceTree = "<group>"; };
+		BBC2DBD827D92B0300403BEC /* SaveView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveView.swift; sourceTree = "<group>"; };
+		BBC2DBDA27D92B0E00403BEC /* CircleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleView.swift; sourceTree = "<group>"; };
+		BBC2DBDC27D92B3400403BEC /* TotalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TotalView.swift; sourceTree = "<group>"; };
+		BBC2DBDE27D92B5000403BEC /* BillView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BillView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -35,6 +45,11 @@
 		AD34A50027D9295F00A6C1F1 = {
 			isa = PBXGroup;
 			children = (
+				BBC2DBDE27D92B5000403BEC /* BillView.swift */,
+				BBC2DBDA27D92B0E00403BEC /* CircleView.swift */,
+				BBC2DBD827D92B0300403BEC /* SaveView.swift */,
+				BBC2DBD427D92AF400403BEC /* SliderView.swift */,
+				BBC2DBDC27D92B3400403BEC /* TotalView.swift */,
 				AD34A50B27D9296000A6C1F1 /* Cash-Register-App */,
 				AD34A50A27D9296000A6C1F1 /* Products */,
 			);
@@ -137,8 +152,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BBC2DBDB27D92B0E00403BEC /* CircleView.swift in Sources */,
+				BBC2DBD527D92AF400403BEC /* SliderView.swift in Sources */,
+				BBC2DBD927D92B0300403BEC /* SaveView.swift in Sources */,
 				AD34A50F27D9296000A6C1F1 /* ContentView.swift in Sources */,
+				BBC2DBDD27D92B3400403BEC /* TotalView.swift in Sources */,
 				AD34A50D27D9296000A6C1F1 /* Cash_Register_AppApp.swift in Sources */,
+				BBC2DBDF27D92B5000403BEC /* BillView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -269,6 +289,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Cash-Register-App/Preview Content\"";
+				DEVELOPMENT_TEAM = 883DK65VTV;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -297,6 +318,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Cash-Register-App/Preview Content\"";
+				DEVELOPMENT_TEAM = 883DK65VTV;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
