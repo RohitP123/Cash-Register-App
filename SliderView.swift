@@ -12,18 +12,18 @@ struct SliderView: View {
 
 
         Slider(
-             value: $billTypeBinding,
-             in: 0...100,
-             step: 1
-         ) {
-             Text("Qty")
-         } minimumValueLabel: {
-             Text("0")
-         } maximumValueLabel: {
-             Text("100")
-         } onEditingChanged: { editing in
-             isEditing = editing
-         }
+            value: $billTypeBinding,
+            in: 0...100,
+            step: 1
+        ) {
+            Text("Qty")
+        } minimumValueLabel: {
+            Text("0")
+        } maximumValueLabel: {
+            Text("100")
+        } onEditingChanged: { editing in
+            isEditing = editing
+        }
 
 
 

@@ -15,17 +15,6 @@ struct TotalView: View {
 
                 Text("Total Money in Register: $\(moneyMoneyMoney, specifier: "%.2f")")
                     .foregroundColor(SecondaryColor)
-                /*
-                 .font(.system(size:15, weight:
-                 .black, design: .rounded))
-                 */
-                // let newTotal = moneyMoneyMoney-150
-                /*
-                 Text("Total Money -$150: $\(newTotal, specifier: "%.2f")")
-                 .foregroundColor(skyBlue)
-                 .font(.subheadline)
-                 .fontWeight(.regular)
-                 */
             }
         }
         Spacer()
