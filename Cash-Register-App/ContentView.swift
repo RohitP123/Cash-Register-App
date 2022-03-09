@@ -122,7 +122,7 @@ struct ContentView: View {
                                         .padding(10)
                                     TextField("Misc. Bills", text: $totalMiscBills)
                                         .padding(10)
-                                        .foregroundColor(PrimaryColor)
+                                        .foregroundColor(SecondaryColor)
                                         .keyboardType(.decimalPad)
                                         .focused($isInputActive)
 
@@ -139,7 +139,7 @@ struct ContentView: View {
                                             .foregroundColor(SecondaryColor)
                                             .padding(10)
                                         TextField("Misc. Coins", text: $totalMiscCoins)
-                                            .foregroundColor(PrimaryColor)
+                                            .foregroundColor(SecondaryColor)
                                             .keyboardType(.decimalPad)
                                             .focused($isInputActive)
                                             .padding(10)
