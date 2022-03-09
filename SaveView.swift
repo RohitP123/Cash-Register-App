@@ -8,15 +8,10 @@ struct SaveView: View {
 
     var body: some View {
         ZStack {
-
             Rectangle()
                 .foregroundColor(PrimaryColor)
                 .cornerRadius(15)
-
-            Spacer()
-
             HStack {
-
                 Button {
 
                     let totalToString: String = String(format: "%.2f", currTotal)

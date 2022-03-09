@@ -47,9 +47,9 @@
 			children = (
 				BBC2DBDE27D92B5000403BEC /* BillView.swift */,
 				BBC2DBDA27D92B0E00403BEC /* CircleView.swift */,
-				BBC2DBD827D92B0300403BEC /* SaveView.swift */,
 				BBC2DBD427D92AF400403BEC /* SliderView.swift */,
 				BBC2DBDC27D92B3400403BEC /* TotalView.swift */,
+				BBC2DBD827D92B0300403BEC /* SaveView.swift */,
 				AD34A50B27D9296000A6C1F1 /* Cash-Register-App */,
 				AD34A50A27D9296000A6C1F1 /* Products */,
 			);

@@ -26,7 +26,7 @@ struct ContentView: View {
     @State private var totalMiscBills = ""
     @State private var totalMiscCoins = ""
     @FocusState private var isInputActive: Bool
-    @State private var showSlider = true
+    @State private var showSlider = false
 
     private var miscTotal: Double {
         let temp1 = Double(totalMiscBills) ?? 0
@@ -79,7 +79,6 @@ struct ContentView: View {
         ScrollView(.vertical) {
 
 
-            Toggle("Slider", isOn: $showSlider)
 
 
             ZStack {
@@ -90,10 +89,13 @@ struct ContentView: View {
 
 
                 VStack {
+
+                    Toggle(isOn: $showSlider) {
+                        Text("Slider")
+                    }
+                        .padding(5)
                     VStack(spacing:20) {
-
                         VStack {
-
                             ScrollView(.horizontal) {
                                 HStack(spacing: 10) {
                                     ForEach(histArr, id: \.self) { hist in
@@ -104,13 +106,10 @@ struct ContentView: View {
                                         }
 
                                     }
-                                }.padding()
+                                } .padding(15)
 
-                            }.frame(height: 100)
-
+                            }
                         }
-
-
                         ZStack {
 
                             Rectangle()
@@ -120,9 +119,9 @@ struct ContentView: View {
                                 HStack {
                                     Text("$")
                                         .foregroundColor(SecondaryColor)
-                                    TextField("Miscellaneous Bills", text: $totalMiscBills)
-
-
+                                        .padding(10)
+                                    TextField("Misc. Bills", text: $totalMiscBills)
+                                        .padding(10)
                                         .foregroundColor(PrimaryColor)
                                         .keyboardType(.decimalPad)
                                         .focused($isInputActive)
@@ -134,27 +133,22 @@ struct ContentView: View {
                                                     isInputActive = false
                                                 }
                                             }
-
-
-
                                         }
                                     HStack {
                                         Text("$")
                                             .foregroundColor(SecondaryColor)
-
-                                        TextField("Miscellaneous Coins", text: $totalMiscCoins)
-
+                                            .padding(10)
+                                        TextField("Misc. Coins", text: $totalMiscCoins)
                                             .foregroundColor(PrimaryColor)
                                             .keyboardType(.decimalPad)
                                             .focused($isInputActive)
-
+                                            .padding(10)
                                             .toolbar {
                                                 ToolbarItemGroup( placement: .keyboard) {
                                                     Spacer()
 
                                                 }
                                             }
-
                                     }
                                 }
                             }
@@ -234,7 +228,7 @@ struct ContentView: View {
                                 }
                             }
                         }
-                        Spacer()
+                     
                         Button {
                             numberof100Bills = 0.0
                             numberof20Bills = 0.0
@@ -256,15 +250,14 @@ struct ContentView: View {
 
                                 Text("CLEAR")
                                     .foregroundColor(SecondaryColor)
-                                    .font(.system(size:15, weight:
-                                            .black, design: .rounded))
+                                    .padding(10)
                             }
 
                         }
 
 
                         TotalView(moneyMoneyMoney: moneyTotal)
-
+            
                         HStack{
                             SaveView(currTotal: moneyTotal)
                             VStack{
@@ -273,9 +266,9 @@ struct ContentView: View {
                                         ForEach(savedArr, id: \.self) { saved in
                                             CircleView(label: saved, labelColor: SecondaryColor)
                                         }
-                                    }.padding()
+                                    }
 
-                                }.frame(height: 100)
+                                } .padding(30)
                             }
                         }
 

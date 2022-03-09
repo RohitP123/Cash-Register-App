@@ -9,12 +9,14 @@ struct TotalView: View {
             Rectangle()
                 .foregroundColor(PrimaryColor)
                 .cornerRadius(15)
+
             Spacer()
             VStack {
 
 
                 Text("Total Money in Register: $\(moneyMoneyMoney, specifier: "%.2f")")
                     .foregroundColor(SecondaryColor)
+                    .padding(10)
             }
         }
         Spacer()
