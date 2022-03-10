@@ -28,6 +28,10 @@ struct BillView: View {
                             .font(.subheadline)
                             .fontWeight(.regular)
 
+                       Rectangle()
+                           .foregroundColor(Color(red: 128/255, green: 128/255, blue: 128/255))
+                           .frame(width: 1, height: 20)
+                        
                         let intBillQty = (Int)(billQty)
                         Text("\(intBillQty)")
                             .foregroundColor(SecondaryColor)

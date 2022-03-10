@@ -9,7 +9,7 @@ let middleBlueGreen = Color(UIColor(red: 0.47, green: 0.80, blue: 0.73, alpha: 1
 
 
 var PrimaryColor = (Color.white)
-var SecondaryColor = Color((UIColor.systemGray))
+var SecondaryColor = Color((UIColor.black))
 var BackgroundColor = middleBlueGreen
 
 struct ContentView: View {
@@ -22,26 +22,26 @@ struct ContentView: View {
     @State private var numberofDimeBills = 0.0
     @State private var numberofNickelBills = 0.0
     @State private var numberofPennyBills = 0.0
-
+    
     @State private var totalMiscBills = ""
     @State private var totalMiscCoins = ""
     @FocusState private var isInputActive: Bool
     @State private var showSlider = false
-
+    
     private var miscTotal: Double {
         let temp1 = Double(totalMiscBills) ?? 0
         let temp2 = Double(totalMiscCoins) ?? 0
         return temp1+temp2
     }
-
+    
     private var hundredTotal: Double {
         return Double(numberof100Bills*100)
     }
-
+    
     private var twentyTotal: Double {
         return Double(numberof20Bills*20)
     }
-
+    
     private var tenTotal: Double {
         return Double(numberof10Bills*10)
     }
@@ -51,49 +51,49 @@ struct ContentView: View {
     private var oneTotal: Double {
         return Double(numberof1Bills*1)
     }
-
+    
     private var quarterTotal: Double {
         return Double(numberofQtrBills*0.25)
     }
-
+    
     private var dimeTotal: Double {
         return Double(numberofDimeBills*0.10)
     }
-
+    
     private var nickelTotal: Double {
         return Double(numberofNickelBills*0.05)
     }
-
+    
     private var pennyTotal: Double {
         return Double(numberofPennyBills*0.01)
     }
-
-
+    
+    
     private var moneyTotal: Double {
         return hundredTotal+twentyTotal+tenTotal+fiveTotal+oneTotal+quarterTotal+dimeTotal+nickelTotal+pennyTotal+miscTotal
     }
-
-
-
+    
+    
+    
     var body: some View {
         ScrollView(.vertical) {
-
-
-
-
+            
+            
+            
+            
             ZStack {
                 Rectangle()
                     .foregroundColor(BackgroundColor)
                     .cornerRadius(20)
                     .edgesIgnoringSafeArea(.all)
-
-
+                
+                
                 VStack {
-
+                    
                     Toggle(isOn: $showSlider) {
                         Text("Slider")
                     }
-                        .padding(5)
+                    .padding(5)
                     VStack(spacing:20) {
                         VStack {
                             ScrollView(.horizontal) {
@@ -104,14 +104,14 @@ struct ContentView: View {
                                         } else {
                                             CircleView(label: hist, labelColor: feldGrau)
                                         }
-
+                                        
                                     }
                                 } .padding(15)
-
+                                
                             }
                         }
                         ZStack {
-
+                            
                             Rectangle()
                                 .foregroundColor(PrimaryColor)
                                 .cornerRadius(20)
@@ -125,7 +125,7 @@ struct ContentView: View {
                                         .foregroundColor(SecondaryColor)
                                         .keyboardType(.decimalPad)
                                         .focused($isInputActive)
-
+                                    
                                         .toolbar {
                                             ToolbarItemGroup( placement: .keyboard) {
                                                 Spacer()
@@ -146,16 +146,16 @@ struct ContentView: View {
                                             .toolbar {
                                                 ToolbarItemGroup( placement: .keyboard) {
                                                     Spacer()
-
+                                                    
                                                 }
                                             }
                                     }
                                 }
                             }
-
-
+                            
+                            
                         }
-
+                        
                         HStack(spacing:20) {
                             VStack {
                                 BillView(billName: "100$", subtotalAmt: hundredTotal, billQty: numberof100Bills, billQtyBinding: $numberof100Bills)
@@ -163,7 +163,7 @@ struct ContentView: View {
                                 if showSlider {
                                     SliderView(billTypeBinding: $numberof100Bills, qtyAmount: 100)
                                         .frame(width: 100, height: 50)
-
+                                    
                                 }
                             }
                             VStack{
@@ -237,7 +237,7 @@ struct ContentView: View {
                                 }
                             }
                         }
-                     
+                        
                         Button {
                             numberof100Bills = 0.0
                             numberof20Bills = 0.0
@@ -256,17 +256,17 @@ struct ContentView: View {
                                 Rectangle()
                                     .cornerRadius(20)
                                     .foregroundColor(PrimaryColor)
-
+                                
                                 Text("CLEAR")
                                     .foregroundColor(SecondaryColor)
                                     .padding(10)
                             }
-
+                            
                         }
-
-
+                        
+                        
                         TotalView(moneyMoneyMoney: moneyTotal)
-            
+                        
                         HStack{
                             SaveView(currTotal: moneyTotal)
                             VStack{
@@ -276,18 +276,18 @@ struct ContentView: View {
                                             CircleView(label: saved, labelColor: SecondaryColor)
                                         }
                                     }
-
+                                    
                                 } .padding(30)
                             }
                         }
-
+                        
                     }
                 }
-
+                
             }
-
+            
         }
-
+        
     }
 }
 
