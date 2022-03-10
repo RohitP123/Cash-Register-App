@@ -6,6 +6,7 @@ struct SliderView: View {
 
     @Binding var billTypeBinding: Double
     @State var isEditing = false
+    @State var qtyAmount = 0.0
 
 
     var body: some View {
@@ -13,18 +14,17 @@ struct SliderView: View {
 
         Slider(
              value: $billTypeBinding,
-             in: 0...100,
+             in: 0...qtyAmount,
              step: 1
          ) {
              Text("Qty")
          } minimumValueLabel: {
              Text("0")
          } maximumValueLabel: {
-             Text("100")
+             Text("\(qtyAmount, specifier: "%.0f")")
          } onEditingChanged: { editing in
              isEditing = editing
          }
-
 
 
     }
@@ -32,7 +32,8 @@ struct SliderView: View {
 
 struct SliderView_Previews: PreviewProvider {
     static var previews: some View {
-        SliderView(billTypeBinding: .constant(1))
+        SliderView(billTypeBinding: .constant(1), qtyAmount: 0)
+        .padding()
     }
 }
 

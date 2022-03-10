@@ -161,7 +161,8 @@ struct ContentView: View {
                                 BillView(billName: "100$", subtotalAmt: hundredTotal, billQty: numberof100Bills, billQtyBinding: $numberof100Bills)
                                     .frame(width: 100, height: 100)
                                 if showSlider {
-                                    SliderView(billTypeBinding: $numberof100Bills)
+                                    SliderView(billTypeBinding: $numberof100Bills, qtyAmount: 100)
+                                        .frame(width: 100, height: 50)
 
                                 }
                             }
@@ -169,14 +170,16 @@ struct ContentView: View {
                                 BillView(billName: "20$", subtotalAmt: twentyTotal, billQty: numberof20Bills, billQtyBinding: $numberof20Bills)
                                     .frame(width: 100, height: 100)
                                 if showSlider {
-                                    SliderView(billTypeBinding: $numberof20Bills)
+                                    SliderView(billTypeBinding: $numberof20Bills, qtyAmount: 200)
+                                        .frame(width: 100, height: 50)
                                 }
                             }
                             VStack{
                                 BillView(billName: "10$", subtotalAmt: tenTotal, billQty: numberof10Bills, billQtyBinding: $numberof10Bills)
                                     .frame(width: 100, height: 100)
                                 if showSlider {
-                                    SliderView(billTypeBinding: $numberof10Bills)
+                                    SliderView(billTypeBinding: $numberof10Bills, qtyAmount: 200)
+                                        .frame(width: 100, height: 50)
                                 }
                             }
                         }
@@ -185,14 +188,16 @@ struct ContentView: View {
                                 BillView(billName: "5$", subtotalAmt: fiveTotal, billQty: numberof5Bills,  billQtyBinding: $numberof5Bills)
                                     .frame(width: 100, height: 100)
                                 if showSlider {
-                                    SliderView(billTypeBinding: $numberof5Bills)
+                                    SliderView(billTypeBinding: $numberof5Bills, qtyAmount: 200)
+                                        .frame(width: 100, height: 50)
                                 }
                             }
                             VStack{
                                 BillView(billName: "1$", subtotalAmt: oneTotal, billQty: numberof1Bills,  billQtyBinding: $numberof1Bills)
                                     .frame(width: 100, height: 100)
                                 if showSlider {
-                                    SliderView(billTypeBinding: $numberof1Bills)
+                                    SliderView(billTypeBinding: $numberof1Bills, qtyAmount: 200)
+                                        .frame(width: 100, height: 50)
                                 }
                             }
                         }
@@ -201,14 +206,16 @@ struct ContentView: View {
                                 BillView(billName: "25c", subtotalAmt: quarterTotal, billQty: numberofQtrBills,  billQtyBinding: $numberofQtrBills)
                                     .frame(width: 100, height: 100)
                                 if showSlider {
-                                    SliderView(billTypeBinding: $numberofQtrBills)
+                                    SliderView(billTypeBinding: $numberofQtrBills, qtyAmount: 500)
+                                        .frame(width: 100, height: 50)
                                 }
                             }
                             VStack{
                                 BillView(billName: "10c", subtotalAmt: dimeTotal, billQty: numberofDimeBills,  billQtyBinding: $numberofDimeBills)
                                     .frame(width: 100, height: 100)
                                 if showSlider {
-                                    SliderView(billTypeBinding: $numberofDimeBills)
+                                    SliderView(billTypeBinding: $numberofDimeBills, qtyAmount: 500)
+                                        .frame(width: 100, height: 50)
                                 }
                             }
                         }
@@ -217,14 +224,16 @@ struct ContentView: View {
                                 BillView(billName: "5c", subtotalAmt: nickelTotal, billQty: numberofNickelBills, billQtyBinding: $numberofNickelBills)
                                     .frame(width: 100, height: 100)
                                 if showSlider {
-                                    SliderView(billTypeBinding: $numberofNickelBills)
+                                    SliderView(billTypeBinding: $numberofNickelBills, qtyAmount: 500)
+                                        .frame(width: 100, height: 50)
                                 }
                             }
                             VStack{
                                 BillView(billName: "1c", subtotalAmt: pennyTotal, billQty: numberofPennyBills, billQtyBinding: $numberofPennyBills)
                                     .frame(width: 100, height: 100)
                                 if showSlider {
-                                    SliderView(billTypeBinding: $numberofPennyBills)
+                                    SliderView(billTypeBinding: $numberofPennyBills, qtyAmount: 500)
+                                        .frame(width: 100, height: 50)
                                 }
                             }
                         }
