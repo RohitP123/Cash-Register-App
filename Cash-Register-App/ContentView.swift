@@ -6,7 +6,7 @@ import SwiftUI
 let darkSienna = Color(UIColor(red: 0.13, green: 0.05, blue: 0.06, alpha: 1.00))
 let feldGrau = Color(UIColor(red: 0.31, green: 0.42, blue: 0.39, alpha: 1.00))
 let middleBlueGreen = Color(UIColor(red: 0.47, green: 0.80, blue: 0.73, alpha: 1.00))
-
+let lighterFeldGRau = Color(UIColor(red: 0.31, green: 0.42, blue: 0.39, alpha: 0.50))
 
 var PrimaryColor = (Color.white)
 var SecondaryColor = Color((UIColor.black))
@@ -100,7 +100,7 @@ struct ContentView: View {
                                 HStack(spacing: 10) {
                                     ForEach(histArr, id: \.self) { hist in
                                         if (hist.contains("+")) {
-                                            CircleView(label: hist, labelColor: feldGrau)
+                                            CircleView(label: hist, labelColor: lighterFeldGRau)
                                         } else {
                                             CircleView(label: hist, labelColor: feldGrau)
                                         }
@@ -192,9 +192,11 @@ struct ContentView: View {
                             VStack{
                                 BillView(billName: "5$", subtotalAmt: fiveTotal, billQty: numberof5Bills,  billQtyBinding: $numberof5Bills)
                                     .frame(width: 100, height: 100)
+                                    //.padding(EdgeInsets(top: 20, leading: 20, bottom: 20, trailing: 0))
                                 if showSlider {
                                     SliderView(billTypeBinding: $numberof5Bills, qtyAmount: 200)
                                         .frame(width: 100, height: 50)
+                                       // .padding(EdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0))
                                 }
                             }
                             VStack{
@@ -205,7 +207,13 @@ struct ContentView: View {
                                         .frame(width: 100, height: 50)
                                 }
                             }
+                            //Spacer()
                         }
+
+                        Rectangle()
+                            .foregroundColor(Color(red: 128/255, green: 128/255, blue: 128/255))
+                            .frame(width: 300, height: 1)
+
                         HStack(spacing:20){
                             VStack{
                                 BillView(billName: "25c", subtotalAmt: quarterTotal, billQty: numberofQtrBills,  billQtyBinding: $numberofQtrBills)
