@@ -164,46 +164,46 @@ struct ContentView: View {
                         
                         HStack(spacing:20) {
                             VStack {
-                                BillView(billName: "100$", subtotalAmt: hundredTotal, billQty: numberof100Bills, billQtyBinding: $numberof100Bills)
+                                BillView(billName: "$100", subtotalAmt: hundredTotal, billQty: numberof100Bills, billQtyBinding: $numberof100Bills)
                                     .frame(width: 100, height: 100)
                                 if showSlider {
-                                    SliderView(billTypeBinding: $numberof100Bills, qtyAmount: 100)
+                                    SliderView(billTypeBinding: $numberof100Bills, qtyAmount: 50)
                                         .frame(width: 100, height: 50)
                                     
                                 }
                             }
                             VStack{
-                                BillView(billName: "20$", subtotalAmt: twentyTotal, billQty: numberof20Bills, billQtyBinding: $numberof20Bills)
+                                BillView(billName: "$20", subtotalAmt: twentyTotal, billQty: numberof20Bills, billQtyBinding: $numberof20Bills)
                                     .frame(width: 100, height: 100)
                                 if showSlider {
-                                    SliderView(billTypeBinding: $numberof20Bills, qtyAmount: 200)
+                                    SliderView(billTypeBinding: $numberof20Bills, qtyAmount: 50)
                                         .frame(width: 100, height: 50)
                                 }
                             }
                             VStack{
-                                BillView(billName: "10$", subtotalAmt: tenTotal, billQty: numberof10Bills, billQtyBinding: $numberof10Bills)
+                                BillView(billName: "$10", subtotalAmt: tenTotal, billQty: numberof10Bills, billQtyBinding: $numberof10Bills)
                                     .frame(width: 100, height: 100)
                                 if showSlider {
-                                    SliderView(billTypeBinding: $numberof10Bills, qtyAmount: 200)
+                                    SliderView(billTypeBinding: $numberof10Bills, qtyAmount: 50)
                                         .frame(width: 100, height: 50)
                                 }
                             }
                         }
                         HStack(spacing:20){
                             VStack{
-                                BillView(billName: "5$", subtotalAmt: fiveTotal, billQty: numberof5Bills,  billQtyBinding: $numberof5Bills)
+                                BillView(billName: "$5", subtotalAmt: fiveTotal, billQty: numberof5Bills,  billQtyBinding: $numberof5Bills)
                                     .frame(width: 100, height: 100)
                                 if showSlider {
-                                    SliderView(billTypeBinding: $numberof5Bills, qtyAmount: 200)
+                                    SliderView(billTypeBinding: $numberof5Bills, qtyAmount: 50)
                                         .frame(width: 100, height: 50)
                                 }
                             }
                             VStack{
-                                BillView(billName: "1$", subtotalAmt: oneTotal, billQty: numberof1Bills,  billQtyBinding: $numberof1Bills)
+                                BillView(billName: "$1", subtotalAmt: oneTotal, billQty: numberof1Bills,  billQtyBinding: $numberof1Bills)
                                     .frame(width: 100, height: 100)
                                     //.padding(EdgeInsets(top: 20, leading: 0, bottom: 20, trailing: 0))
                                 if showSlider {
-                                    SliderView(billTypeBinding: $numberof1Bills, qtyAmount: 200)
+                                    SliderView(billTypeBinding: $numberof1Bills, qtyAmount: 50)
                                         .frame(width: 100, height: 50)
                                 }
                             }
@@ -218,7 +218,7 @@ struct ContentView: View {
                                 BillView(billName: "25c", subtotalAmt: quarterTotal, billQty: numberofQtrBills,  billQtyBinding: $numberofQtrBills)
                                     .frame(width: 100, height: 100)
                                 if showSlider {
-                                    SliderView(billTypeBinding: $numberofQtrBills, qtyAmount: 500)
+                                    SliderView(billTypeBinding: $numberofQtrBills, qtyAmount: 50)
                                         .frame(width: 100, height: 50)
                                 }
                             }
@@ -227,7 +227,7 @@ struct ContentView: View {
                                     .frame(width: 100, height: 100)
                                     //.padding(EdgeInsets(top: 20, leading: 0, bottom: 20, trailing: 0))
                                 if showSlider {
-                                    SliderView(billTypeBinding: $numberofDimeBills, qtyAmount: 500)
+                                    SliderView(billTypeBinding: $numberofDimeBills, qtyAmount: 50)
                                         .frame(width: 100, height: 50)
                                 }
                             }
@@ -237,7 +237,7 @@ struct ContentView: View {
                                 BillView(billName: "5c", subtotalAmt: nickelTotal, billQty: numberofNickelBills, billQtyBinding: $numberofNickelBills)
                                     .frame(width: 100, height: 100)
                                 if showSlider {
-                                    SliderView(billTypeBinding: $numberofNickelBills, qtyAmount: 500)
+                                    SliderView(billTypeBinding: $numberofNickelBills, qtyAmount: 50)
                                         .frame(width: 100, height: 50)
                                 }
                             }
@@ -245,7 +245,7 @@ struct ContentView: View {
                                 BillView(billName: "1c", subtotalAmt: pennyTotal, billQty: numberofPennyBills, billQtyBinding: $numberofPennyBills)
                                     .frame(width: 100, height: 100)
                                 if showSlider {
-                                    SliderView(billTypeBinding: $numberofPennyBills, qtyAmount: 500)
+                                    SliderView(billTypeBinding: $numberofPennyBills, qtyAmount: 50)
                                         .frame(width: 100, height: 50)
                                 }
                             }
@@ -286,7 +286,7 @@ struct ContentView: View {
                                 ScrollView(.horizontal) {
                                     HStack(spacing: 10) {
                                         ForEach(savedArr, id: \.self) { saved in
-                                            CircleView(label: saved, labelColor: feldGrau)
+                                            CircleView(label: saved, labelColor: SecondaryColor)
                                         }
                                     }
                                     

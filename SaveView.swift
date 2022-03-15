@@ -19,7 +19,7 @@ struct SaveView: View {
 
                 } label: {
                     Text("Save Value")
-                        .foregroundColor(feldGrau)
+                        .foregroundColor(SecondaryColor)
                 }
 
             }

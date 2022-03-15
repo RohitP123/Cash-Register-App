@@ -44,13 +44,22 @@ struct BillView: View {
 
             }
             Spacer()
+            HStack{
             Button {
                 if billQtyBinding > 0 {
                     billQtyBinding -= 1
                     histArr.append("-"+billName)
                 }
             } label: {
-                Text("Subtotal: $\(subtotalAmt, specifier: "%.2f")")
+                /*
+
+                 */
+                Image(systemName: "minus.circle")
+                    .foregroundColor(.red)
+                    .font(.system(.title, design:
+                                        .rounded))
+            }
+                Text("$\(subtotalAmt, specifier: "%.2f")")
                     .foregroundColor(SecondaryColor)
                     .font(.subheadline)
                     .fontWeight(.regular)
