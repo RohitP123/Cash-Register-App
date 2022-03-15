@@ -19,7 +19,6 @@ struct TotalView: View {
                     .padding(10)
             }
         }
-        Spacer()
     }
 }
 

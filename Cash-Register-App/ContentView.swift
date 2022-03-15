@@ -89,11 +89,7 @@ struct ContentView: View {
                 
                 
                 VStack {
-                    
-                    Toggle(isOn: $showSlider) {
-                        Text("Slider")
-                    }
-                    .padding(5)
+                    //.padding(5)
                     VStack(spacing:20) {
                         VStack {
                             ScrollView(.horizontal) {
@@ -109,7 +105,12 @@ struct ContentView: View {
                                 } .padding(15)
                                 
                             }
+                            Toggle(isOn: $showSlider) {
+                                Text("Toggle Sliders")
+
+                            }
                         }
+                    
                         ZStack {
                             
                             Rectangle()
@@ -192,7 +193,6 @@ struct ContentView: View {
                             VStack{
                                 BillView(billName: "5$", subtotalAmt: fiveTotal, billQty: numberof5Bills,  billQtyBinding: $numberof5Bills)
                                     .frame(width: 100, height: 100)
-                                    .padding(EdgeInsets(top: 20, leading: 20, bottom: 20, trailing: 0))
                                 if showSlider {
                                     SliderView(billTypeBinding: $numberof5Bills, qtyAmount: 200)
                                         .frame(width: 100, height: 50)
@@ -201,13 +201,12 @@ struct ContentView: View {
                             VStack{
                                 BillView(billName: "1$", subtotalAmt: oneTotal, billQty: numberof1Bills,  billQtyBinding: $numberof1Bills)
                                     .frame(width: 100, height: 100)
-                                    .padding(EdgeInsets(top: 20, leading: 0, bottom: 20, trailing: 0))
+                                    //.padding(EdgeInsets(top: 20, leading: 0, bottom: 20, trailing: 0))
                                 if showSlider {
                                     SliderView(billTypeBinding: $numberof1Bills, qtyAmount: 200)
                                         .frame(width: 100, height: 50)
                                 }
                             }
-                            Spacer()
                         }
 
                         Rectangle()
@@ -218,7 +217,6 @@ struct ContentView: View {
                             VStack{
                                 BillView(billName: "25c", subtotalAmt: quarterTotal, billQty: numberofQtrBills,  billQtyBinding: $numberofQtrBills)
                                     .frame(width: 100, height: 100)
-                                    .padding(EdgeInsets(top: 20, leading: 20, bottom: 20, trailing: 0))
                                 if showSlider {
                                     SliderView(billTypeBinding: $numberofQtrBills, qtyAmount: 500)
                                         .frame(width: 100, height: 50)
@@ -227,42 +225,30 @@ struct ContentView: View {
                             VStack{
                                 BillView(billName: "10c", subtotalAmt: dimeTotal, billQty: numberofDimeBills,  billQtyBinding: $numberofDimeBills)
                                     .frame(width: 100, height: 100)
-                                    .padding(EdgeInsets(top: 20, leading: 0, bottom: 20, trailing: 0))
+                                    //.padding(EdgeInsets(top: 20, leading: 0, bottom: 20, trailing: 0))
                                 if showSlider {
                                     SliderView(billTypeBinding: $numberofDimeBills, qtyAmount: 500)
                                         .frame(width: 100, height: 50)
                                 }
                             }
+                        }
+                        HStack(spacing:20){
                             VStack{
                                 BillView(billName: "5c", subtotalAmt: nickelTotal, billQty: numberofNickelBills, billQtyBinding: $numberofNickelBills)
                                     .frame(width: 100, height: 100)
-                                    .padding(EdgeInsets(top: 20, leading: 0, bottom: 20, trailing: 0))
                                 if showSlider {
                                     SliderView(billTypeBinding: $numberofNickelBills, qtyAmount: 500)
                                         .frame(width: 100, height: 50)
                                 }
                             }
-                            Spacer()
-                        }
-                        HStack(spacing:20){
-                            /*VStack{
-                                BillView(billName: "5c", subtotalAmt: nickelTotal, billQty: numberofNickelBills, billQtyBinding: $numberofNickelBills)
-                                    .frame(width: 100, height: 100)
-                                if showSlider {
-                                    SliderView(billTypeBinding: $numberofNickelBills, qtyAmount: 500)
-                                        .frame(width: 100, height: 50)
-                                }
-                            }*/
                             VStack{
                                 BillView(billName: "1c", subtotalAmt: pennyTotal, billQty: numberofPennyBills, billQtyBinding: $numberofPennyBills)
                                     .frame(width: 100, height: 100)
-                                    .padding(EdgeInsets(top: 0, leading: 20, bottom: 20, trailing: 0))
                                 if showSlider {
                                     SliderView(billTypeBinding: $numberofPennyBills, qtyAmount: 500)
                                         .frame(width: 100, height: 50)
                                 }
                             }
-                            Spacer()
                         }
                         
                         Button {
@@ -284,7 +270,7 @@ struct ContentView: View {
                                     .cornerRadius(20)
                                     .foregroundColor(PrimaryColor)
                                 
-                                Text("CLEAR")
+                                Text("Clear")
                                     .foregroundColor(SecondaryColor)
                                     .padding(10)
                             }
@@ -300,7 +286,7 @@ struct ContentView: View {
                                 ScrollView(.horizontal) {
                                     HStack(spacing: 10) {
                                         ForEach(savedArr, id: \.self) { saved in
-                                            CircleView(label: saved, labelColor: SecondaryColor)
+                                            CircleView(label: saved, labelColor: feldGrau)
                                         }
                                     }
                                     
