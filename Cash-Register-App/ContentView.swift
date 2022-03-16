@@ -91,7 +91,7 @@ struct ContentView: View {
         return Double(numPennyRolls*0.01*50)
     }
     
-    
+
     private var moneyTotal: Double {
         return hundredTotal+twentyTotal+tenTotal+fiveTotal+oneTotal+quarterTotal+dimeTotal+nickelTotal+pennyTotal+miscTotal+quarterRollTotal+dimeRollTotal+nickelRollTotal+pennyRollTotal
     }

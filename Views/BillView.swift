@@ -8,9 +8,12 @@ struct BillView: View {
     var billQty = 1.0
 
 
+
     @Binding var billQtyBinding: Double //x
 
     var body: some View {
+
+
         VStack {
 
             ZStack {
@@ -52,6 +55,7 @@ struct BillView: View {
                     }
                 } label: {
                     HStack{
+                          if (billQtyBinding > 0) {
                         Image(systemName: "minus.circle")
                             .foregroundColor(.red)
                             .font(.system(.title, design:
@@ -60,13 +64,22 @@ struct BillView: View {
                             .foregroundColor(SecondaryColor)
                             .font(.subheadline)
                             .fontWeight(.regular)
+
+                         } else {
+                         Text("$\(subtotalAmt, specifier: "%.2f")")
+                         .foregroundColor(SecondaryColor)
+                         .font(.subheadline)
+                         .fontWeight(.regular)
+                         }
+
+
                     }
 
                 }
-
             }
         }
     }
+
 }
 
 struct BillView_Previews: PreviewProvider {
@@ -74,3 +87,4 @@ struct BillView_Previews: PreviewProvider {
         BillView(billName: "Blank", billQtyBinding: .constant(1))
     }
 }
+

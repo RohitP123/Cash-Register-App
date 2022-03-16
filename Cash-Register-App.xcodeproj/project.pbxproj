@@ -16,6 +16,7 @@
 		BBC2DBDB27D92B0E00403BEC /* CircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBC2DBDA27D92B0E00403BEC /* CircleView.swift */; };
 		BBC2DBDD27D92B3400403BEC /* TotalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBC2DBDC27D92B3400403BEC /* TotalView.swift */; };
 		BBC2DBDF27D92B5000403BEC /* BillView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBC2DBDE27D92B5000403BEC /* BillView.swift */; };
+		BBC2DBE427E25C3B00403BEC /* TestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBC2DBE327E25C3B00403BEC /* TestView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +30,7 @@
 		BBC2DBDA27D92B0E00403BEC /* CircleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleView.swift; sourceTree = "<group>"; };
 		BBC2DBDC27D92B3400403BEC /* TotalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TotalView.swift; sourceTree = "<group>"; };
 		BBC2DBDE27D92B5000403BEC /* BillView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BillView.swift; sourceTree = "<group>"; };
+		BBC2DBE327E25C3B00403BEC /* TestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,11 +47,8 @@
 		AD34A50027D9295F00A6C1F1 = {
 			isa = PBXGroup;
 			children = (
-				BBC2DBDE27D92B5000403BEC /* BillView.swift */,
-				BBC2DBDA27D92B0E00403BEC /* CircleView.swift */,
-				BBC2DBD427D92AF400403BEC /* SliderView.swift */,
-				BBC2DBDC27D92B3400403BEC /* TotalView.swift */,
-				BBC2DBD827D92B0300403BEC /* SaveView.swift */,
+				BBC2DBE327E25C3B00403BEC /* TestView.swift */,
+				BBC2DBE227E25C1D00403BEC /* Views */,
 				AD34A50B27D9296000A6C1F1 /* Cash-Register-App */,
 				AD34A50A27D9296000A6C1F1 /* Products */,
 			);
@@ -80,6 +79,18 @@
 				AD34A51327D9296500A6C1F1 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		BBC2DBE227E25C1D00403BEC /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				BBC2DBDE27D92B5000403BEC /* BillView.swift */,
+				BBC2DBDC27D92B3400403BEC /* TotalView.swift */,
+				BBC2DBDA27D92B0E00403BEC /* CircleView.swift */,
+				BBC2DBD827D92B0300403BEC /* SaveView.swift */,
+				BBC2DBD427D92AF400403BEC /* SliderView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -156,6 +167,7 @@
 				BBC2DBD527D92AF400403BEC /* SliderView.swift in Sources */,
 				BBC2DBD927D92B0300403BEC /* SaveView.swift in Sources */,
 				AD34A50F27D9296000A6C1F1 /* ContentView.swift in Sources */,
+				BBC2DBE427E25C3B00403BEC /* TestView.swift in Sources */,
 				BBC2DBDD27D92B3400403BEC /* TotalView.swift in Sources */,
 				AD34A50D27D9296000A6C1F1 /* Cash_Register_AppApp.swift in Sources */,
 				BBC2DBDF27D92B5000403BEC /* BillView.swift in Sources */,
