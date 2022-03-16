@@ -13,64 +13,87 @@ var SecondaryColor = Color((UIColor.black))
 var BackgroundColor = middleBlueGreen
 
 struct ContentView: View {
-    @State private var numberof100Bills = 0.0
-    @State private var numberof20Bills = 0.0
-    @State private var numberof10Bills = 0.0
-    @State private var numberof5Bills = 0.0
-    @State private var numberof1Bills = 0.0
-    @State private var numberofQtrBills = 0.0
-    @State private var numberofDimeBills = 0.0
-    @State private var numberofNickelBills = 0.0
-    @State private var numberofPennyBills = 0.0
-    
+    @State private var num100Bills = 0.0
+    @State private var num20Bills = 0.0
+    @State private var num10Bills = 0.0
+    @State private var num5Bills = 0.0
+    @State private var num1Bills = 0.0
+    @State private var numQuarters = 0.0
+    @State private var numDimes = 0.0
+    @State private var numNickels = 0.0
+    @State private var numPennys = 0.0
+    @State private var numQuarterRolls = 0.0
+    @State private var numDimeRolls = 0.0
+    @State private var numNickelRolls = 0.0
+    @State private var numPennyRolls = 0.0
+
     @State private var totalMiscBills = ""
     @State private var totalMiscCoins = ""
     @FocusState private var isInputActive: Bool
     @State private var showSlider = false
+    @State private var showCoinRolls = false
     
     private var miscTotal: Double {
         let temp1 = Double(totalMiscBills) ?? 0
         let temp2 = Double(totalMiscCoins) ?? 0
         return temp1+temp2
+        
     }
+
     
     private var hundredTotal: Double {
-        return Double(numberof100Bills*100)
+        return Double(num100Bills*100)
     }
     
     private var twentyTotal: Double {
-        return Double(numberof20Bills*20)
+        return Double(num20Bills*20)
     }
     
     private var tenTotal: Double {
-        return Double(numberof10Bills*10)
+        return Double(num10Bills*10)
     }
     private var fiveTotal: Double {
-        return Double(numberof5Bills*5)
+        return Double(num5Bills*5)
     }
     private var oneTotal: Double {
-        return Double(numberof1Bills*1)
+        return Double(num1Bills*1)
     }
     
     private var quarterTotal: Double {
-        return Double(numberofQtrBills*0.25)
+        return Double(numQuarters*0.25)
     }
     
     private var dimeTotal: Double {
-        return Double(numberofDimeBills*0.10)
+        return Double(numDimes*0.10)
     }
     
     private var nickelTotal: Double {
-        return Double(numberofNickelBills*0.05)
+        return Double(numNickels*0.05)
     }
     
     private var pennyTotal: Double {
-        return Double(numberofPennyBills*0.01)
+        return Double(numPennys*0.01)
+    }
+
+    private var quarterRollTotal: Double {
+        return Double(numQuarterRolls*0.25*40)
+    }
+
+    private var dimeRollTotal: Double {
+        return Double(numDimeRolls*0.10*50)
+    }
+
+    private var nickelRollTotal: Double {
+        return Double(numNickelRolls*0.05*40)
+    }
+
+    private var pennyRollTotal: Double {
+        return Double(numPennyRolls*0.01*50)
     }
     
     
     private var moneyTotal: Double {
-        return hundredTotal+twentyTotal+tenTotal+fiveTotal+oneTotal+quarterTotal+dimeTotal+nickelTotal+pennyTotal+miscTotal
+        return hundredTotal+twentyTotal+tenTotal+fiveTotal+oneTotal+quarterTotal+dimeTotal+nickelTotal+pennyTotal+miscTotal+quarterRollTotal+dimeRollTotal+nickelRollTotal+pennyRollTotal
     }
     
     
@@ -107,10 +130,14 @@ struct ContentView: View {
                             }
                             Toggle(isOn: $showSlider) {
                                 Text("Toggle Sliders")
-
+                                    .foregroundColor(feldGrau)
+                            }
+                            Toggle(isOn: $showCoinRolls) {
+                                Text("Toggle Coin Rolls")
+                                    .foregroundColor(feldGrau)
                             }
                         }
-                    
+
                         ZStack {
                             
                             Rectangle()
@@ -139,7 +166,7 @@ struct ContentView: View {
                                     Rectangle()
                                         .foregroundColor(Color(red: 128/255, green: 128/255, blue: 128/255))
                                         .frame(width: 1, height: 20)
-    
+
                                     HStack {
                                         Text("$")
                                             .foregroundColor(SecondaryColor)
@@ -164,46 +191,46 @@ struct ContentView: View {
                         
                         HStack(spacing:20) {
                             VStack {
-                                BillView(billName: "$100", subtotalAmt: hundredTotal, billQty: numberof100Bills, billQtyBinding: $numberof100Bills)
+                                BillView(billName: "$100", subtotalAmt: hundredTotal, billQty: num100Bills, billQtyBinding: $num100Bills)
                                     .frame(width: 100, height: 100)
                                 if showSlider {
-                                    SliderView(billTypeBinding: $numberof100Bills, qtyAmount: 50)
+                                    SliderView(billTypeBinding: $num100Bills, qtyAmount: 50)
                                         .frame(width: 100, height: 50)
                                     
                                 }
                             }
                             VStack{
-                                BillView(billName: "$20", subtotalAmt: twentyTotal, billQty: numberof20Bills, billQtyBinding: $numberof20Bills)
+                                BillView(billName: "$20", subtotalAmt: twentyTotal, billQty: num20Bills, billQtyBinding: $num20Bills)
                                     .frame(width: 100, height: 100)
                                 if showSlider {
-                                    SliderView(billTypeBinding: $numberof20Bills, qtyAmount: 50)
+                                    SliderView(billTypeBinding: $num20Bills, qtyAmount: 50)
                                         .frame(width: 100, height: 50)
                                 }
                             }
                             VStack{
-                                BillView(billName: "$10", subtotalAmt: tenTotal, billQty: numberof10Bills, billQtyBinding: $numberof10Bills)
+                                BillView(billName: "$10", subtotalAmt: tenTotal, billQty: num10Bills, billQtyBinding: $num10Bills)
                                     .frame(width: 100, height: 100)
                                 if showSlider {
-                                    SliderView(billTypeBinding: $numberof10Bills, qtyAmount: 50)
+                                    SliderView(billTypeBinding: $num10Bills, qtyAmount: 50)
                                         .frame(width: 100, height: 50)
                                 }
                             }
                         }
                         HStack(spacing:20){
                             VStack{
-                                BillView(billName: "$5", subtotalAmt: fiveTotal, billQty: numberof5Bills,  billQtyBinding: $numberof5Bills)
+                                BillView(billName: "$5", subtotalAmt: fiveTotal, billQty: num5Bills,  billQtyBinding: $num5Bills)
                                     .frame(width: 100, height: 100)
                                 if showSlider {
-                                    SliderView(billTypeBinding: $numberof5Bills, qtyAmount: 50)
+                                    SliderView(billTypeBinding: $num5Bills, qtyAmount: 50)
                                         .frame(width: 100, height: 50)
                                 }
                             }
                             VStack{
-                                BillView(billName: "$1", subtotalAmt: oneTotal, billQty: numberof1Bills,  billQtyBinding: $numberof1Bills)
+                                BillView(billName: "$1", subtotalAmt: oneTotal, billQty: num1Bills,  billQtyBinding: $num1Bills)
                                     .frame(width: 100, height: 100)
-                                    //.padding(EdgeInsets(top: 20, leading: 0, bottom: 20, trailing: 0))
+                                //.padding(EdgeInsets(top: 20, leading: 0, bottom: 20, trailing: 0))
                                 if showSlider {
-                                    SliderView(billTypeBinding: $numberof1Bills, qtyAmount: 50)
+                                    SliderView(billTypeBinding: $num1Bills, qtyAmount: 50)
                                         .frame(width: 100, height: 50)
                                 }
                             }
@@ -214,53 +241,103 @@ struct ContentView: View {
                             .frame(width: 300, height: 1)
 
                         HStack(spacing:20){
-                            VStack{
-                                BillView(billName: "25c", subtotalAmt: quarterTotal, billQty: numberofQtrBills,  billQtyBinding: $numberofQtrBills)
-                                    .frame(width: 100, height: 100)
-                                if showSlider {
-                                    SliderView(billTypeBinding: $numberofQtrBills, qtyAmount: 50)
-                                        .frame(width: 100, height: 50)
+                            if (showCoinRolls) {
+                                VStack{
+                                    BillView(billName: "25c Roll", subtotalAmt: quarterRollTotal, billQty: numQuarterRolls,  billQtyBinding: $numQuarterRolls)
+                                        .frame(width: 100, height: 100)
+                                    if showSlider {
+                                        SliderView(billTypeBinding: $numQuarterRolls, qtyAmount: 50)
+                                            .frame(width: 100, height: 50)
+                                    }
                                 }
-                            }
-                            VStack{
-                                BillView(billName: "10c", subtotalAmt: dimeTotal, billQty: numberofDimeBills,  billQtyBinding: $numberofDimeBills)
-                                    .frame(width: 100, height: 100)
+                                VStack{
+                                    BillView(billName: "10c Roll", subtotalAmt: dimeRollTotal, billQty: numDimeRolls,  billQtyBinding: $numDimeRolls)
+                                        .frame(width: 100, height: 100)
                                     //.padding(EdgeInsets(top: 20, leading: 0, bottom: 20, trailing: 0))
-                                if showSlider {
-                                    SliderView(billTypeBinding: $numberofDimeBills, qtyAmount: 50)
-                                        .frame(width: 100, height: 50)
+                                    if showSlider {
+                                        SliderView(billTypeBinding: $numDimeRolls, qtyAmount: 50)
+                                            .frame(width: 100, height: 50)
+                                    }
+                                }
+                            } else {
+                                VStack{
+                                    BillView(billName: "25c", subtotalAmt: quarterTotal, billQty: numQuarters,  billQtyBinding: $numQuarters)
+                                        .frame(width: 100, height: 100)
+                                    if showSlider {
+                                        SliderView(billTypeBinding: $numQuarters, qtyAmount: 50)
+                                            .frame(width: 100, height: 50)
+                                    }
+                                }
+                                VStack{
+                                    BillView(billName: "10c", subtotalAmt: dimeTotal, billQty: numDimes,  billQtyBinding: $numDimes)
+                                        .frame(width: 100, height: 100)
+                                    //.padding(EdgeInsets(top: 20, leading: 0, bottom: 20, trailing: 0))
+                                    if showSlider {
+                                        SliderView(billTypeBinding: $numDimes, qtyAmount: 50)
+                                            .frame(width: 100, height: 50)
+                                    }
                                 }
                             }
+
+
+
+
+
                         }
                         HStack(spacing:20){
-                            VStack{
-                                BillView(billName: "5c", subtotalAmt: nickelTotal, billQty: numberofNickelBills, billQtyBinding: $numberofNickelBills)
-                                    .frame(width: 100, height: 100)
-                                if showSlider {
-                                    SliderView(billTypeBinding: $numberofNickelBills, qtyAmount: 50)
-                                        .frame(width: 100, height: 50)
+                            if showCoinRolls {
+                                VStack{
+                                    BillView(billName: "5c Rolls", subtotalAmt: nickelRollTotal, billQty: numNickelRolls, billQtyBinding: $numNickelRolls)
+                                        .frame(width: 100, height: 100)
+                                    if showSlider {
+                                        SliderView(billTypeBinding: $numNickelRolls, qtyAmount: 50)
+                                            .frame(width: 100, height: 50)
+                                    }
+                                }
+                                VStack{
+                                    BillView(billName: "1c Rolls", subtotalAmt: pennyRollTotal, billQty: numPennyRolls, billQtyBinding: $numPennyRolls)
+                                        .frame(width: 100, height: 100)
+                                    if showSlider {
+                                        SliderView(billTypeBinding: $numPennyRolls, qtyAmount: 50)
+                                            .frame(width: 100, height: 50)
+                                    }
+                                }
+                            } else {
+                                VStack{
+                                    BillView(billName: "5c", subtotalAmt: nickelTotal, billQty: numNickels, billQtyBinding: $numNickels)
+                                        .frame(width: 100, height: 100)
+                                    if showSlider {
+                                        SliderView(billTypeBinding: $numNickels, qtyAmount: 50)
+                                            .frame(width: 100, height: 50)
+                                    }
+                                }
+                                VStack{
+                                    BillView(billName: "1c", subtotalAmt: pennyTotal, billQty: numPennys, billQtyBinding: $numPennys)
+                                        .frame(width: 100, height: 100)
+                                    if showSlider {
+                                        SliderView(billTypeBinding: $numPennys, qtyAmount: 50)
+                                            .frame(width: 100, height: 50)
+                                    }
                                 }
                             }
-                            VStack{
-                                BillView(billName: "1c", subtotalAmt: pennyTotal, billQty: numberofPennyBills, billQtyBinding: $numberofPennyBills)
-                                    .frame(width: 100, height: 100)
-                                if showSlider {
-                                    SliderView(billTypeBinding: $numberofPennyBills, qtyAmount: 50)
-                                        .frame(width: 100, height: 50)
-                                }
-                            }
+
+
                         }
                         
                         Button {
-                            numberof100Bills = 0.0
-                            numberof20Bills = 0.0
-                            numberof10Bills = 0.0
-                            numberof5Bills = 0.0
-                            numberof1Bills = 0.0
-                            numberofQtrBills = 0.0
-                            numberofDimeBills = 0.0
-                            numberofNickelBills = 0.0
-                            numberofPennyBills = 0.0
+                            num100Bills = 0.0
+                            num20Bills = 0.0
+                            num10Bills = 0.0
+                            num5Bills = 0.0
+                            num1Bills = 0.0
+                            numQuarters = 0.0
+                            numDimes = 0.0
+                            numNickels = 0.0
+                            numPennys = 0.0
+                            numQuarterRolls = 0.0
+                            numDimeRolls = 0.0
+                            numNickelRolls = 0.0
+                            numPennyRolls = 0.0
                             totalMiscBills = ""
                             totalMiscCoins = ""
                             histArr = [String]()

@@ -28,9 +28,9 @@ struct BillView: View {
                             .font(.subheadline)
                             .fontWeight(.regular)
 
-                       Rectangle()
-                           .foregroundColor(Color(red: 128/255, green: 128/255, blue: 128/255))
-                           .frame(width: 1, height: 20)
+                        Rectangle()
+                            .foregroundColor(Color(red: 128/255, green: 128/255, blue: 128/255))
+                            .frame(width: 1, height: 20)
                         
                         let intBillQty = (Int)(billQty)
                         Text("\(intBillQty)")
@@ -45,24 +45,25 @@ struct BillView: View {
             }
             Spacer()
             HStack{
-            Button {
-                if billQtyBinding > 0 {
-                    billQtyBinding -= 1
-                    histArr.append("-"+billName)
-                }
-            } label: {
-                /*
+                Button {
+                    if billQtyBinding > 0 {
+                        billQtyBinding -= 1
+                        histArr.append("-"+billName)
+                    }
+                } label: {
+                    HStack{
+                        Image(systemName: "minus.circle")
+                            .foregroundColor(.red)
+                            .font(.system(.title, design:
+                                    .rounded))
+                        Text("$\(subtotalAmt, specifier: "%.2f")")
+                            .foregroundColor(SecondaryColor)
+                            .font(.subheadline)
+                            .fontWeight(.regular)
+                    }
 
-                 */
-                Image(systemName: "minus.circle")
-                    .foregroundColor(.red)
-                    .font(.system(.title, design:
-                                        .rounded))
-            }
-                Text("$\(subtotalAmt, specifier: "%.2f")")
-                    .foregroundColor(SecondaryColor)
-                    .font(.subheadline)
-                    .fontWeight(.regular)
+                }
+
             }
         }
     }
