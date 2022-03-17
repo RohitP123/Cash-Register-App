@@ -15,9 +15,23 @@ struct BillView: View {
     //shoutout https://adampaxton.com/make-a-press-and-hold-fast-forward-button-in-swiftui/
 
     @Binding var billQtyBinding: Double //x
-
+    @State var showAbove = false;
     var body: some View {
         VStack{
+            if(showAbove) {
+                if (billName.suffix(1) == "c") {
+                Text("$\(subtotalAmt, specifier: "%.2f")")
+                    .foregroundColor(SecondaryColor)
+                    .font(.subheadline)
+                    .fontWeight(.regular)
+                }
+                else {
+                    Text("$\(subtotalAmt, specifier: "%.0f")")
+                        .foregroundColor(SecondaryColor)
+                        .font(.subheadline)
+                        .fontWeight(.regular)
+                }
+            }
             ZStack {
                 RoundedRectangle(cornerRadius: 20)
                     .foregroundColor(PrimaryColor)
@@ -28,6 +42,7 @@ struct BillView: View {
                     if(self.isLongPressing){
                         //end of a longpress gesture, stop fastforwarding
                         self.isLongPressing.toggle()
+                        self.showAbove = false;
                         self.timer?.invalidate()
                     } else {
                         //regular tap
@@ -53,12 +68,14 @@ struct BillView: View {
                 })
                 .simultaneousGesture(LongPressGesture(minimumDuration: 0.2).onEnded { _ in
                     self.isLongPressing = true
+                    self.showAbove = true;
                     //or fastforward has started to start the timer
                     self.timer = Timer.scheduledTimer(withTimeInterval: 0.1, repeats: true, block: { _ in
                         self.billQtyBinding += 1
                         histArr.append("+"+billName)
                     })
                 })
+
 
             }
 
