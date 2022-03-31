@@ -1,4 +1,5 @@
 var savedArr = [String]()
+var emptyArr = [String]()
 
 import SwiftUI
 
@@ -11,7 +12,9 @@ struct SaveView: View {
             Rectangle()
                 .foregroundColor(PrimaryColor)
                 .cornerRadius(15)
-            HStack {
+            VStack{
+           
+                HStack {
                 Button {
 
                     let totalToString: String = String(format: "%.2f", currTotal)
@@ -20,6 +23,22 @@ struct SaveView: View {
                 } label: {
                     Text("Save Value")
                         .foregroundColor(SecondaryColor)
+                }
+                
+            }
+
+                Button {
+                    savedArr = [String]()
+                } label: {
+                    ZStack {
+                        Rectangle()
+                            .cornerRadius(20)
+                            .foregroundColor(PrimaryColor)
+                        
+                        Text("Clear Saved")
+                            .foregroundColor(SecondaryColor)
+                            .padding(10)
+                    }
                 }
 
             }

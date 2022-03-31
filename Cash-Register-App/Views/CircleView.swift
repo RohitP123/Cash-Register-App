@@ -11,7 +11,7 @@ struct CircleView: View {
         ZStack {
             Circle()
                 .fill(labelColor)
-                .frame(width: 50, height: 50)
+                .frame(width: 70, height: 70)
             Text(label)
         }
     }

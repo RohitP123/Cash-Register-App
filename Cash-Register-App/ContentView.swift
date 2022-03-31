@@ -112,7 +112,6 @@ struct ContentView: View {
                 
                 
                 VStack {
-                    //.padding(5)
                     VStack(spacing:20) {
                         VStack {
                             ScrollView(.horizontal) {
@@ -123,9 +122,8 @@ struct ContentView: View {
                                         } else {
                                             CircleView(label: hist, labelColor: feldGrau)
                                         }
-                                        
                                     }
-                                } .padding(15)
+                                }.padding(15)
                                 
                             }
                             Toggle(isOn: $showSlider) {
@@ -243,7 +241,7 @@ struct ContentView: View {
                         HStack(spacing:20){
                             if (showCoinRolls) {
                                 VStack{
-                                    BillView(billName: "25c Roll", subtotalAmt: quarterRollTotal, billQty: numQuarterRolls,  billQtyBinding: $numQuarterRolls)
+                                    BillView(billName: "25c R", subtotalAmt: quarterRollTotal, billQty: numQuarterRolls,  billQtyBinding: $numQuarterRolls)
                                         .frame(width: 100, height: 100)
                                     if showSlider {
                                         SliderView(billTypeBinding: $numQuarterRolls, qtyAmount: 50)
@@ -251,7 +249,7 @@ struct ContentView: View {
                                     }
                                 }
                                 VStack{
-                                    BillView(billName: "10c Roll", subtotalAmt: dimeRollTotal, billQty: numDimeRolls,  billQtyBinding: $numDimeRolls)
+                                    BillView(billName: "10c R", subtotalAmt: dimeRollTotal, billQty: numDimeRolls,  billQtyBinding: $numDimeRolls)
                                         .frame(width: 100, height: 100)
                                     //.padding(EdgeInsets(top: 20, leading: 0, bottom: 20, trailing: 0))
                                     if showSlider {
@@ -287,7 +285,7 @@ struct ContentView: View {
                         HStack(spacing:20){
                             if showCoinRolls {
                                 VStack{
-                                    BillView(billName: "5c Rolls", subtotalAmt: nickelRollTotal, billQty: numNickelRolls, billQtyBinding: $numNickelRolls)
+                                    BillView(billName: "5c R", subtotalAmt: nickelRollTotal, billQty: numNickelRolls, billQtyBinding: $numNickelRolls)
                                         .frame(width: 100, height: 100)
                                     if showSlider {
                                         SliderView(billTypeBinding: $numNickelRolls, qtyAmount: 50)
@@ -295,7 +293,7 @@ struct ContentView: View {
                                     }
                                 }
                                 VStack{
-                                    BillView(billName: "1c Rolls", subtotalAmt: pennyRollTotal, billQty: numPennyRolls, billQtyBinding: $numPennyRolls)
+                                    BillView(billName: "1c R", subtotalAmt: pennyRollTotal, billQty: numPennyRolls, billQtyBinding: $numPennyRolls)
                                         .frame(width: 100, height: 100)
                                     if showSlider {
                                         SliderView(billTypeBinding: $numPennyRolls, qtyAmount: 50)
@@ -363,7 +361,7 @@ struct ContentView: View {
                                 ScrollView(.horizontal) {
                                     HStack(spacing: 10) {
                                         ForEach(savedArr, id: \.self) { saved in
-                                            CircleView(label: saved, labelColor: SecondaryColor)
+                                            CircleView(label: "$" + saved, labelColor: feldGrau)
                                         }
                                     }
                                     
