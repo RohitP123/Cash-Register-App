@@ -95,6 +95,7 @@ struct ContentView: View {
     private var moneyTotal: Double {
         return hundredTotal+twentyTotal+tenTotal+fiveTotal+oneTotal+quarterTotal+dimeTotal+nickelTotal+pennyTotal+miscTotal+quarterRollTotal+dimeRollTotal+nickelRollTotal+pennyRollTotal
     }
+
     
     
     
