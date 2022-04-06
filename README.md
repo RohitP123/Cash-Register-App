@@ -7,6 +7,7 @@
 - Increased the size of the history view circle labels and the save view circle labels
 - Replaced the subtotal being displayed above buttons during long press with quantity
 ![Cash2 4](https://user-images.githubusercontent.com/95701961/162021976-a6a72bca-8194-427e-ba07-a415abba3e99.PNG)
+<src="https://user-images.githubusercontent.com/95701961/162021976-a6a72bca-8194-427e-ba07-a415abba3e99.PNG" width="321" height="695" />
 
 ### Version 2.3
 - Made the minus button disappear if there are the quantity of a bill button is zero
@@ -51,5 +52,6 @@
 ### Version 1.1
 - Added $20, $10, $5, $1, 0.25c, 0.10c, 0.05c, 0.01c buttons
 - Added total cash register amount at the bottom
-- Made app t![Cash1 1](https://user-images.githubusercontent.com/95701961/162021297-e719dd19-632e-4405-b0d4-c8a7e065246c.jpg)
-heme purple
+- Made app theme purple
+![Cash1 1](https://user-images.githubusercontent.com/95701961/162021297-e719dd19-632e-4405-b0d4-c8a7e065246c.jpg)
+
