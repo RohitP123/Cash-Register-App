@@ -23,7 +23,7 @@
 - Added sliders for the bill buttons and a slider toggle to switch back and forth
 - Added a visible minus button below the bill buttons
 - Added a save value button
-- Added multilayout support
+- Added multiple device support
 
 ### Version 1.4
 - Revamped app color scheme to be green
