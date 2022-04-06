@@ -6,7 +6,7 @@ struct BillView: View {
     var billName = "" //"20$"
     var subtotalAmt = 1.01
     var billQty = 1.0
-    var billFlag = false
+    var billFlag = false//yeehaw coyboy
 
 
     @State private var timer: Timer?
@@ -19,19 +19,12 @@ struct BillView: View {
     var body: some View {
         VStack{
             if(showAbove) {
-                if (billName.suffix(1) == "c") {
-                Text("$\(subtotalAmt, specifier: "%.2f")")
-                    .foregroundColor(SecondaryColor)
-                    .font(.subheadline)
-                    .fontWeight(.regular)
-                }
-                else {
-                    Text("$\(subtotalAmt, specifier: "%.0f")")
-                        .foregroundColor(SecondaryColor)
-                        .font(.subheadline)
-                        .fontWeight(.regular)
-                }
-            }
+                           Text("Qty: \(billQty, specifier: "%.0f")")
+                                    .foregroundColor(SecondaryColor)
+                                    .font(.subheadline)
+                                    .fontWeight(.regular)
+
+                        }
             ZStack {
                 RoundedRectangle(cornerRadius: 20)
                     .foregroundColor(PrimaryColor)
