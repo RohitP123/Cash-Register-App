@@ -6,12 +6,12 @@
 - Added a clear save button
 - Increased the size of the history view circle labels and the save view circle labels
 - Replaced the subtotal being displayed above buttons during long press with quantity
-- 
+
 ### Version 1.7
 - Made the minus button disappear if there are the quantity of a bill button is zero
 - Fixed sizing of buttons while long press was enabled
 - Added subtotal to be displayed above buttons during long press
-- 
+
 ### Version 1.6
 - Added a coin roll toggle to transform the coin buttons to be coin roll buttons
 - Implemented a save view next to the save value button to display all of the saved values
