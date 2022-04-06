@@ -7,6 +7,12 @@
 - Increased the size of the history view circle labels and the save view circle labels
 - Replaced the subtotal being displayed above buttons during long press with quantity
 
+<p float="left">
+  <img src="https://user-images.githubusercontent.com/95701961/162021976-a6a72bca-8194-427e-ba07-a415abba3e99.PNG" width=20% height=80%/>
+  </p>
+
+
+
 ![Cash2 4](https://user-images.githubusercontent.com/95701961/162021976-a6a72bca-8194-427e-ba07-a415abba3e99.PNG)
 <src="https://user-images.githubusercontent.com/95701961/162021976-a6a72bca-8194-427e-ba07-a415abba3e99.PNG" width="321" height="695" />
 
