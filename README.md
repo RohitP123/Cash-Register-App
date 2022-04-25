@@ -1,3 +1,6 @@
+# Privacy Policy
+
+We do not collect any data from users.
 
 # Cash Register Counter
 # Version History
