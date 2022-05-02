@@ -104,12 +104,15 @@ struct ContentView: View {
             
             
             
+            let screenSize: CGRect = UIScreen.main.bounds
             
             ZStack {
                 Rectangle()
                     .foregroundColor(BackgroundColor)
                     .cornerRadius(20)
                     .edgesIgnoringSafeArea(.all)
+                    //.scaledToFit()
+                    .frame(width: screenSize.width , height: screenSize.height)
                 
                 
                 VStack {
