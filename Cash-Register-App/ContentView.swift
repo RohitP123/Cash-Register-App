@@ -130,11 +130,15 @@ struct ContentView: View {
                                 }.padding(15)
                                 
                             }
+
                             Toggle(isOn: $showSlider) {
+                                Spacer()
                                 Text("Toggle Sliders")
                                     .foregroundColor(feldGrau)
                             }
+
                             Toggle(isOn: $showCoinRolls) {
+                                Spacer()
                                 Text("Toggle Coin Rolls")
                                     .foregroundColor(feldGrau)
                             }
@@ -325,7 +329,7 @@ struct ContentView: View {
 
 
                         }
-                        
+                        HStack{
                         Button {
                             num100Bills = 0.0
                             num20Bills = 0.0
@@ -358,7 +362,7 @@ struct ContentView: View {
                         
                         
                         TotalView(moneyMoneyMoney: moneyTotal)
-                        
+                        }
                         HStack{
                             SaveView(currTotal: moneyTotal)
                             VStack{

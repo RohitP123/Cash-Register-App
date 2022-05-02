@@ -11,7 +11,7 @@ struct SaveView: View {
         ZStack {
             Rectangle()
                 .foregroundColor(PrimaryColor)
-                .cornerRadius(15)
+                .cornerRadius(20)
             VStack{
            
                 HStack {

@@ -14,7 +14,7 @@ struct TotalView: View {
             VStack {
 
 
-                Text("Total Money in Register: $\(moneyMoneyMoney, specifier: "%.2f")")
+                Text("Total: $\(moneyMoneyMoney, specifier: "%.2f")")
                     .foregroundColor(SecondaryColor)
                     .padding(10)
             }
