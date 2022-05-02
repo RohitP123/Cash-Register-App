@@ -12,6 +12,8 @@ var PrimaryColor = (Color.white)
 var SecondaryColor = Color((UIColor.black))
 var BackgroundColor = middleBlueGreen
 
+let screenSize: CGRect = UIScreen.main.bounds
+
 struct ContentView: View {
     @State private var num100Bills = 0.0
     @State private var num20Bills = 0.0
@@ -104,7 +106,6 @@ struct ContentView: View {
             
             
             
-            let screenSize: CGRect = UIScreen.main.bounds
             
             ZStack {
                 Rectangle()
@@ -149,6 +150,7 @@ struct ContentView: View {
                             Rectangle()
                                 .foregroundColor(PrimaryColor)
                                 .cornerRadius(20)
+                                .frame(width: screenSize.width, height: screenSize.height/10)
                             HStack {
                                 HStack {
                                     Text("$")
@@ -352,10 +354,12 @@ struct ContentView: View {
                                 Rectangle()
                                     .cornerRadius(20)
                                     .foregroundColor(PrimaryColor)
+                                    .frame(width: screenSize.width/2, height: screenSize.height/10)
                                 
                                 Text("Clear")
                                     .foregroundColor(SecondaryColor)
                                     .padding(10)
+                                
                             }
                             
                         }

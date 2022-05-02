@@ -12,6 +12,9 @@ struct SaveView: View {
             Rectangle()
                 .foregroundColor(PrimaryColor)
                 .cornerRadius(20)
+                .frame(width: screenSize.width/2, height: screenSize.height/10)
+
+            
             VStack{
            
                 HStack {
@@ -21,8 +24,16 @@ struct SaveView: View {
                     savedArr.append(totalToString)
 
                 } label: {
-                    Text("Save Value")
-                        .foregroundColor(SecondaryColor)
+                    ZStack {
+                        Rectangle()
+                            .cornerRadius(20)
+                            .foregroundColor(PrimaryColor)
+                            .frame(width: screenSize.width/2, height: screenSize.height/25)
+                        
+                        Text("Save Value")
+                            .foregroundColor(SecondaryColor)
+                            .padding(10)
+                    }
                 }
                 
             }
@@ -34,6 +45,7 @@ struct SaveView: View {
                         Rectangle()
                             .cornerRadius(20)
                             .foregroundColor(PrimaryColor)
+                            .frame(width: screenSize.width/2, height: screenSize.height/25)
                         
                         Text("Clear Saved")
                             .foregroundColor(SecondaryColor)
