@@ -10,7 +10,7 @@ struct TotalView: View {
             Rectangle()
                 .foregroundColor(PrimaryColor)
                 .cornerRadius(15)
-                .frame(width: screenSize.width/2, height: screenSize.height/10)
+                .frame(width: screenSize.width/2, height: screenSize.height/15)
 
             Spacer()
             VStack {
@@ -18,7 +18,7 @@ struct TotalView: View {
 
                 Text("Total: $\(moneyMoneyMoney, specifier: "%.2f")")
                     .foregroundColor(SecondaryColor)
-                    .padding(10)
+                    .padding(20)
             }
         }
     }

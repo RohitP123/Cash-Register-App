@@ -5,13 +5,12 @@ struct CircleView: View {
     @State var label: String
     var labelColor : Color
 
-
     var body: some View {
 
         ZStack {
             Circle()
                 .fill(labelColor)
-                .frame(width: 70, height: 70)
+                .frame(width: 55, height: 55)
             Text(label)
         }
     }

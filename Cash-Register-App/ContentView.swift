@@ -13,6 +13,9 @@ var SecondaryColor = Color((UIColor.black))
 var BackgroundColor = middleBlueGreen
 
 let screenSize: CGRect = UIScreen.main.bounds
+let spacingSize = screenSize.width/13
+let buttonHeight = screenSize.height/15
+let buttonWidth = screenSize.width/3
 
 struct ContentView: View {
     @State private var num100Bills = 0.0
@@ -100,19 +103,21 @@ struct ContentView: View {
 
     
     
-    
+
+
+
+
     var body: some View {
         ScrollView(.vertical) {
             
             
-            
-            
+
             ZStack {
                 Rectangle()
                     .foregroundColor(BackgroundColor)
                     .cornerRadius(20)
                     .edgesIgnoringSafeArea(.all)
-                    //.scaledToFit()
+                //.scaledToFit()
                     .frame(width: screenSize.width , height: screenSize.height)
                 
                 
@@ -133,13 +138,13 @@ struct ContentView: View {
                             }
 
                             Toggle(isOn: $showSlider) {
-                                Spacer()
+                                Spacer(minLength: 20)
                                 Text("Toggle Sliders")
                                     .foregroundColor(feldGrau)
                             }
 
                             Toggle(isOn: $showCoinRolls) {
-                                Spacer()
+                                Spacer(minLength: 20)
                                 Text("Toggle Coin Rolls")
                                     .foregroundColor(feldGrau)
                             }
@@ -150,15 +155,15 @@ struct ContentView: View {
                             Rectangle()
                                 .foregroundColor(PrimaryColor)
                                 .cornerRadius(20)
-                                .frame(width: screenSize.width, height: screenSize.height/10)
+                                .frame(width: screenSize.width, height: buttonHeight)
                             HStack {
                                 HStack {
                                     Text("$")
                                         .foregroundColor(SecondaryColor)
-                                        .padding(10)
+                                        .padding([.leading], 30)
                                     TextField("Misc. Bills", text: $totalMiscBills)
                                         .padding(10)
-                                        .foregroundColor(SecondaryColor)
+                                        .foregroundColor(.black)
                                         .keyboardType(.decimalPad)
                                         .focused($isInputActive)
                                     
@@ -178,9 +183,10 @@ struct ContentView: View {
                                     HStack {
                                         Text("$")
                                             .foregroundColor(SecondaryColor)
-                                            .padding(10)
+                                            .padding([.leading], 10)
+                                    
                                         TextField("Misc. Coins", text: $totalMiscCoins)
-                                            .foregroundColor(SecondaryColor)
+                                            .foregroundColor(.black)
                                             .keyboardType(.decimalPad)
                                             .focused($isInputActive)
                                             .padding(10)
@@ -197,7 +203,7 @@ struct ContentView: View {
                             
                         }
                         
-                        HStack(spacing:20) {
+                        HStack(spacing:spacingSize) {
                             VStack {
                                 BillView(billName: "$100", subtotalAmt: hundredTotal, billQty: num100Bills, billQtyBinding: $num100Bills)
                                     .frame(width: 100, height: 100)
@@ -224,7 +230,7 @@ struct ContentView: View {
                                 }
                             }
                         }
-                        HStack(spacing:20){
+                        HStack(spacing:spacingSize){
                             VStack{
                                 BillView(billName: "$5", subtotalAmt: fiveTotal, billQty: num5Bills,  billQtyBinding: $num5Bills)
                                     .frame(width: 100, height: 100)
@@ -248,7 +254,7 @@ struct ContentView: View {
                             .foregroundColor(Color(red: 128/255, green: 128/255, blue: 128/255))
                             .frame(width: 300, height: 1)
 
-                        HStack(spacing:20){
+                        HStack(spacing:spacingSize){
                             if (showCoinRolls) {
                                 VStack{
                                     BillView(billName: "25c R", subtotalAmt: quarterRollTotal, billQty: numQuarterRolls,  billQtyBinding: $numQuarterRolls)
@@ -292,7 +298,7 @@ struct ContentView: View {
 
 
                         }
-                        HStack(spacing:20){
+                        HStack(spacing:spacingSize){
                             if showCoinRolls {
                                 VStack{
                                     BillView(billName: "5c R", subtotalAmt: nickelRollTotal, billQty: numNickelRolls, billQtyBinding: $numNickelRolls)
@@ -331,53 +337,55 @@ struct ContentView: View {
 
 
                         }
-                        HStack{
-                        Button {
-                            num100Bills = 0.0
-                            num20Bills = 0.0
-                            num10Bills = 0.0
-                            num5Bills = 0.0
-                            num1Bills = 0.0
-                            numQuarters = 0.0
-                            numDimes = 0.0
-                            numNickels = 0.0
-                            numPennys = 0.0
-                            numQuarterRolls = 0.0
-                            numDimeRolls = 0.0
-                            numNickelRolls = 0.0
-                            numPennyRolls = 0.0
-                            totalMiscBills = ""
-                            totalMiscCoins = ""
-                            histArr = [String]()
-                        } label: {
-                            ZStack {
-                                Rectangle()
-                                    .cornerRadius(20)
-                                    .foregroundColor(PrimaryColor)
-                                    .frame(width: screenSize.width/2, height: screenSize.height/10)
-                                
-                                Text("Clear")
-                                    .foregroundColor(SecondaryColor)
-                                    .padding(10)
-                                
-                            }
-                            
-                        }
-                        
-                        
-                        TotalView(moneyMoneyMoney: moneyTotal)
-                        }
-                        HStack{
-                            SaveView(currTotal: moneyTotal)
-                            VStack{
-                                ScrollView(.horizontal) {
-                                    HStack(spacing: 10) {
-                                        ForEach(savedArr, id: \.self) { saved in
-                                            CircleView(label: "$" + saved, labelColor: feldGrau)
-                                        }
+                        VStack(spacing: 10) {
+                            HStack(spacing: 10){
+                                Button {
+                                    num100Bills = 0.0
+                                    num20Bills = 0.0
+                                    num10Bills = 0.0
+                                    num5Bills = 0.0
+                                    num1Bills = 0.0
+                                    numQuarters = 0.0
+                                    numDimes = 0.0
+                                    numNickels = 0.0
+                                    numPennys = 0.0
+                                    numQuarterRolls = 0.0
+                                    numDimeRolls = 0.0
+                                    numNickelRolls = 0.0
+                                    numPennyRolls = 0.0
+                                    totalMiscBills = ""
+                                    totalMiscCoins = ""
+                                    histArr = [String]()
+                                } label: {
+                                    ZStack {
+                                        Rectangle()
+                                            .cornerRadius(15)
+                                            .foregroundColor(PrimaryColor)
+                                            .frame(width: screenSize.width/2, height: buttonHeight)
+
+                                        Text("Clear")
+                                            .foregroundColor(SecondaryColor)
+                                            .padding(20)
+
                                     }
-                                    
-                                } .padding(30)
+
+                                }
+
+
+                                TotalView(moneyMoneyMoney: moneyTotal)
+                            }
+                            HStack{
+                                SaveView(currTotal: moneyTotal)
+                                VStack(spacing: 10){
+                                    ScrollView(.horizontal) {
+                                        HStack(spacing: 10) {
+                                            ForEach(savedArr, id: \.self) { saved in
+                                                CircleView(label: "$" + saved, labelColor: feldGrau)
+                                            }
+                                        }
+
+                                    }
+                                }
                             }
                         }
                         

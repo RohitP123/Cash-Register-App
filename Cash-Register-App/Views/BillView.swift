@@ -13,7 +13,6 @@ struct BillView: View {
     @State var isLongPressing = false
     @State var isLongPressingMinus = false
     //shoutout https://adampaxton.com/make-a-press-and-hold-fast-forward-button-in-swiftui/
-
     @Binding var billQtyBinding: Double //x
     @State var showAbove = false;
     var body: some View {
@@ -29,7 +28,7 @@ struct BillView: View {
                 RoundedRectangle(cornerRadius: 20)
                     .foregroundColor(PrimaryColor)
                     .cornerRadius(15)
-                    .frame(width: 100, height: 60)
+                    .frame(width: screenSize.width/4, height: buttonHeight)
                 Spacer()
                 Button(action: {
                     if(self.isLongPressing){
@@ -94,14 +93,15 @@ struct BillView: View {
                                 .foregroundColor(.red)
                                 .font(.system(.title, design:
                                         .rounded))
-                            if (billName.suffix(1) == "c") {
+                            if (billName.suffix(1) == "c" || billName == "1c R") { //cents get 0.00
                             Text("$\(subtotalAmt, specifier: "%.2f")")
                                 .foregroundColor(SecondaryColor)
                                 .font(.subheadline)
                                 .fontWeight(.regular)
                             }
+                            //the issue is we want the penny roll to actually be like that as well
                             else {
-                                Text("$\(subtotalAmt, specifier: "%.0f")")
+                                Text("$\(subtotalAmt, specifier: "%.0f")") //non cents are just $10 etc
                                     .foregroundColor(SecondaryColor)
                                     .font(.subheadline)
                                     .fontWeight(.regular)
