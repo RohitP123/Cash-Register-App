@@ -13,9 +13,33 @@ var SecondaryColor = Color((UIColor.black))
 var BackgroundColor = middleBlueGreen
 
 let screenSize: CGRect = UIScreen.main.bounds
-let spacingSize = screenSize.width/13
-let buttonHeight = screenSize.height/15
-let buttonWidth = screenSize.width/3
+let screenHeight = screenSize.size.height
+let screenWidth = screenSize.size.width
+
+
+/*
+
+Misc Rectangle Button Size - GOOD
+ W: Screensize length
+ H: Screenheight/12 (ipad) Screenheight/10 (iphone)
+BillView Button Size
+ W: 15,4
+ H: 5,4
+Clear Rectangle Button Size
+ W: 2, 2
+ H: 15, 15
+TotalView Button Size
+ W: 2,2
+ H: 15,15
+
+ clear must equal total view
+ClearValue and SaveView button size
+
+
+
+
+
+ */
 
 struct ContentView: View {
     @State private var num100Bills = 0.0
@@ -45,8 +69,64 @@ struct ContentView: View {
         
     }
 
+    private var isIPad: Bool {
+        if screenHeight > 1000 {
+            return true
+        } else {
+            return false
+        }
+    }
+
+    private var spacingSize: CGFloat {
+        if isIPad == true {
+            print("ipad alert")
+            return screenSize.width/6
+        }
+        else {
+            print("iphone alert")
+          return screenSize.width/15
+        }
+    }
+
+ 
+
+    private var miscHeight: CGFloat {
+        if isIPad == true {
+            print("ipad alert")
+            return screenWidth/12
+        }
+        else {
+            print("iphone alert")
+          return screenWidth/10
+        }
+    }
+
+    private var clearWidth: CGFloat {
+        if isIPad == true {
+        //ipad
+            return screenWidth/2 //W
+        }
+        else {
+         //iphone
+          return screenWidth/2 //W
+        }
+    }
+
+    private var clearHeight: CGFloat {
+        if isIPad == true {
+         //ipad
+            return screenWidth/11 //W
+        }
+        else {
+        //iphone
+          return screenWidth/7 //W
+        }
+    }
+
     
     private var hundredTotal: Double {
+        print(screenSize)
+        print(screenHeight)
         return Double(num100Bills*100)
     }
     
@@ -151,11 +231,11 @@ struct ContentView: View {
                         }
 
                         ZStack {
-                            
+                            //misc shit
                             Rectangle()
                                 .foregroundColor(PrimaryColor)
                                 .cornerRadius(20)
-                                .frame(width: screenSize.width, height: buttonHeight)
+                                .frame(width: screenSize.width, height: miscHeight) //GOOD
                             HStack {
                                 HStack {
                                     Text("$")
@@ -337,6 +417,7 @@ struct ContentView: View {
 
 
                         }
+                        //clear button
                         VStack(spacing: 10) {
                             HStack(spacing: 10){
                                 Button {
@@ -361,8 +442,8 @@ struct ContentView: View {
                                         Rectangle()
                                             .cornerRadius(15)
                                             .foregroundColor(PrimaryColor)
-                                            .frame(width: screenSize.width/2, height: buttonHeight)
-
+                                            .frame(width: clearWidth, height: clearHeight)
+//clear button
                                         Text("Clear")
                                             .foregroundColor(SecondaryColor)
                                             .padding(20)
@@ -371,7 +452,7 @@ struct ContentView: View {
 
                                 }
 
-
+                                //total
                                 TotalView(moneyMoneyMoney: moneyTotal)
                             }
                             HStack{

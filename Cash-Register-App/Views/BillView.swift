@@ -15,6 +15,38 @@ struct BillView: View {
     //shoutout https://adampaxton.com/make-a-press-and-hold-fast-forward-button-in-swiftui/
     @Binding var billQtyBinding: Double //x
     @State var showAbove = false;
+
+
+    private var isIPad: Bool {
+        if screenHeight > 1000 {
+            return true
+        } else {
+            return false
+        }
+    }
+
+    private var buttonHeight: CGFloat {
+        if isIPad == true {
+            print("ipad alert")
+            return screenHeight/15 //good
+        }
+        else {
+            print("iphone alert")
+          return screenHeight/14
+        }
+    }
+
+    private var buttonWidth: CGFloat {
+        if isIPad == true {
+            print("ipad alert")
+            return screenWidth/5 //good
+        }
+        else {
+            print("iphone alert")
+          return screenWidth/4
+        }
+    }
+
     var body: some View {
         VStack{
             if(showAbove) {
@@ -28,7 +60,7 @@ struct BillView: View {
                 RoundedRectangle(cornerRadius: 20)
                     .foregroundColor(PrimaryColor)
                     .cornerRadius(15)
-                    .frame(width: screenSize.width/4, height: buttonHeight)
+                    .frame(width: buttonWidth, height: buttonHeight)
                 Spacer()
                 Button(action: {
                     if(self.isLongPressing){
