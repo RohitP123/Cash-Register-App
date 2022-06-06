@@ -5,6 +5,14 @@ We do not collect any data from users.
 # Cash Register Counter
 # Version History
 
+### Version 2.5
+- Revamped iPhone and iPad layout
+- Made button sizing dynamic, resulting in more robust device support
+- Changed locations of clear and total buttons!
+
+<img src="https://user-images.githubusercontent.com/95701961/172237877-263ce8f6-be14-4add-925a-d016e7c3e39b.png" width=20% height=80%/>
+
+
 ### Version 2.4
 - Added a clear save button
 - Increased the size of the history view circle labels and the save view circle labels
